@@ -1,6 +1,7 @@
 const express=require('express')
 const hbs=require('hbs')
 var app = express()
+const port = process.env.PORT||3000
 
 app.set('view engine','hbs')
 hbs.registerPartials(__dirname + '/views/partials')
@@ -20,6 +21,6 @@ app.get('/about',(req,res)=>{
     res.render('about.hbs')
 })
 
-app.listen(3000,()=>{
-    console.log('server listen on local host 3000')
+app.listen(port,()=>{
+    console.log(`server listen on local host 3000`)
 })
